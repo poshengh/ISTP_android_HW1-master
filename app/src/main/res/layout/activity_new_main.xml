@@ -44,26 +44,30 @@
             android:layout_below="@+id/nameEditText"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:id="@+id/optionsGroup">
+            android:id="@+id/optionsGroup"
+            android:orientation="horizontal">
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="小火龍"
                 android:id="@+id/radioButton"
-                android:checked="true" />
+                android:checked="true"
+                android:drawableRight="@drawable/charmander_thumbnail"
+                android:drawablePadding="-24dp" />
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="傑尼龜"
-                android:id="@+id/radioButton2" />
+                android:id="@+id/radioButton2"
+                android:drawableRight="@drawable/squirtle_thumbnail"
+                android:drawablePadding="-24dp" />
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="妙蛙種子"
-                android:id="@+id/radioButton3" />
+                android:id="@+id/radioButton3"
+                android:drawableRight="@drawable/bulbasaur_thumbnail"
+                android:drawablePadding="-24dp" />
         </RadioGroup>
 
         <Button
