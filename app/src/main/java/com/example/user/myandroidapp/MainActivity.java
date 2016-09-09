@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     RadioGroup optionsGroup;
     Button confirmBtn;
     //add a checkbox member variable
+    CheckBox nameHideCheck;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         confirmBtn.setOnClickListener(MainActivity.this);
 
         //find the checkBox UI here
-
+        nameHideCheck = (CheckBox)findViewById(R.id.checkBox);
     }
 
     @Override
@@ -61,11 +63,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //            RadioButton selectedRadioButton = (RadioButton)selectedRadioButtonView;
 //            String radioBtnText = selectedRadioButton.getText().toString();
 
+
             String welcomeMessage = String.format(
                     "你好, 訓練家%s 歡迎來到神奇寶貝的世界 你的第一個夥伴是%s",
                     name,
                     pokemonName
             );
+
+            if (nameHideCheck.isChecked()) {
+                welcomeMessage = String.format(
+                        "你好, 歡迎來到神奇寶貝的世界 你的第一個夥伴是%s",
+                        pokemonName
+                );
+            }
 
             infoText.setText(welcomeMessage);
         }
